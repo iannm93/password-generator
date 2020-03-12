@@ -7,6 +7,7 @@ var specialChar = ["$", "!", "@"];
 var passwordInfo = [];
 var characterMin = 8;
 var characterMax = 128;
+var randomString = "";
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input
@@ -18,7 +19,7 @@ function writePassword() {
 // TODO: Write code so the generatePassword returns a string for a password
 // which meets the requirements in the instructions.
 function generatePassword() {
-  return (passwordInfo)
+  return (randomString)
   // confirm   if user wants capital characters
 }
 var capitalChar = confirm("do you want capital letters?")
@@ -27,12 +28,14 @@ if (capitalChar) {
   for (i = 0 ; i < upperCase.length; i++){
   passwordInfo.push(upperCase[i]);
   }
+}
   // confirm if user wants lower-case characters
   var lowerChars = confirm ("do you want lower-case letters?")
   if (lowerChars){
     // if yes, add all lower-case characters to password array
     for (j = 0 ; j < lowerCase.length; j++){
       passwordInfo.push(lowerCase[j]);
+
     }
   }
   // confirm if user wants any special characters 
@@ -41,6 +44,7 @@ if (capitalChar) {
     // if yes, add all specials to password array
     for (k = 0 ; k < specialChar.length; k++){
       passwordInfo.push(specialChar[k])
+
     }
     
   }
@@ -55,14 +59,15 @@ if (capitalChar) {
   // prompt the user for their password length
   var lengthOf = prompt("enter a password length between " + characterMin + " and " + characterMax)
   if(lengthOf >= characterMin && lengthOf <= characterMax){
-    passwordInfo.push(lengthOf)
+    var lengthOfNumber = parseInt(lengthOf)
+   console.log(lengthOfNumber)
   }
   //  generate random string based on desired parameters
-  var randomString = passwordInfo[Math.floor(Math.random()*lengthOf)];{
-    for ( m =0 ; m < lengthOf.length; m ++){
-    console.log(randomString[m]) 
+  for ( m =0 ; m < lengthOfNumber; m ++){
+    randomString = randomString.concat(passwordInfo[Math.floor(Math.random()*passwordInfo.length)]);
+    console.log(typeof lengthOfNumber)
 
-    }
+    
   }
     // check if the user confimed at least one of the four options
     // if any of (numeric=true) OR (specials=true) OR (lowers=true) OR  (captials = true), generate pass word and store it as a variable
@@ -75,9 +80,7 @@ if (capitalChar) {
     // add join
     // display the string in the box
     
-  }
-  
 
+  generatePassword()
 console.log(passwordInfo);
-
-
+console.log(randomString)
