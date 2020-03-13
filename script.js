@@ -7,7 +7,7 @@ var specialChar = ["$", "!", "@"];
 var passwordInfo = [];
 var characterMin = 8;
 var characterMax = 128;
-var randomString = "";
+var randomString = "";    
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input
