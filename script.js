@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 var upperCase = ["A", "B", "C", "D", "E", "F","G", "H", "I", "J", "K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var lowerCase = ["a", "b", "c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var numbers = ["0", "1", "2", "3","4","5","6","7","8","9"];
-var specialChar = ["$", "!", "@"];
+var specialChar = ["$", "!", "@", "#", "%", "^", "*", ")", "("];
 var passwordInfo = [];
 var characterMin = 8;
 var characterMax = 128;
@@ -30,7 +30,7 @@ if (capitalChar) {
   }
 }
   // confirm if user wants lower-case characters
-  var lowerChars = confirm ("do you want lower-case letters?")
+  let lowerChars = confirm ("do you want lower-case letters?")
   if (lowerChars){
     // if yes, add all lower-case characters to password array
     for (j = 0 ; j < lowerCase.length; j++){
@@ -39,7 +39,7 @@ if (capitalChar) {
     }
   }
   // confirm if user wants any special characters 
-  var specials = confirm("do you want any special characters")
+  let specials = confirm("do you want any special characters")
   if (specials){
     // if yes, add all specials to password array
     for (k = 0 ; k < specialChar.length; k++){
@@ -49,7 +49,7 @@ if (capitalChar) {
     
   }
   // ask if they want numeric options
-  var numeric = confirm("do you want any numeric characters?")
+  let numeric = confirm("do you want any numeric characters?")
   // if yes, addd numeric  options password array
   if (numeric){
     for (l = 0; l < numbers.length; l++){
@@ -57,15 +57,15 @@ if (capitalChar) {
     }
   }
   // prompt the user for their password length
-  var lengthOf = prompt("enter a password length between " + characterMin + " and " + characterMax)
+  let lengthOf = prompt("enter a password length between " + characterMin + " and " + characterMax)
   if(lengthOf >= characterMin && lengthOf <= characterMax){
     var lengthOfNumber = parseInt(lengthOf)
-   console.log(lengthOfNumber)
+   
   }
   //  generate random string based on desired parameters
   for ( m =0 ; m < lengthOfNumber; m ++){
     randomString = randomString.concat(passwordInfo[Math.floor(Math.random()*passwordInfo.length)]);
-    console.log(typeof lengthOfNumber)
+    
 
     
   }
@@ -82,5 +82,4 @@ if (capitalChar) {
     
 
   generatePassword()
-console.log(passwordInfo);
-console.log(randomString)
+
