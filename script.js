@@ -1,19 +1,19 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
-var upperCase = ["A", "B", "C", "D", "E", "F","G", "H", "I", "J", "K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-var lowerCase = ["a", "b", "c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-var numbers = ["0", "1", "2", "3","4","5","6","7","8","9"];
-var specialChar = ["$", "!", "@", "#", "%", "^", "*", ")", "("];
-var passwordInfo = [];
-var characterMin = 8;
-var characterMax = 128;
-var randomString = "";    
+let generateBtn = document.querySelector("#generate");
+let upperCase = ["A", "B", "C", "D", "E", "F","G", "H", "I", "J", "K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+let lowerCase = ["a", "b", "c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+let numbers = ["0", "1", "2", "3","4","5","6","7","8","9"];
+let specialChar = ["$", "!", "@", "#", "%", "^", "*", ")", "("];
+let passwordInfo = [];
+let characterMin = 8;
+let characterMax = 128;
+let randomString = "";    
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
 // TODO: Write code so the generatePassword returns a string for a password
@@ -22,7 +22,7 @@ function generatePassword() {
   return (randomString)
   // confirm   if user wants capital characters
 }
-var capitalChar = confirm("do you want capital letters?")
+let capitalChar = confirm("do you want capital letters?")
 if (capitalChar) {
   // if yes, add all capital characters to password array
   for (i = 0 ; i < upperCase.length; i++){
@@ -59,27 +59,14 @@ if (capitalChar) {
   // prompt the user for their password length
   let lengthOf = prompt("enter a password length between " + characterMin + " and " + characterMax)
   if(lengthOf >= characterMin && lengthOf <= characterMax){
-    var lengthOfNumber = parseInt(lengthOf)
+    lengthOf = parseInt(lengthOf)
    
   }
   //  generate random string based on desired parameters
-  for ( m =0 ; m < lengthOfNumber; m ++){
+  for ( m =0 ; m < lengthOf; m ++){
     randomString = randomString.concat(passwordInfo[Math.floor(Math.random()*passwordInfo.length)]);
     
-
-    
   }
-    // check if the user confimed at least one of the four options
-    // if any of (numeric=true) OR (specials=true) OR (lowers=true) OR  (captials = true), generate pass word and store it as a variable
-    // END IF
-    // if password length is <= 7 or >= 129, alert user of requirements 
-    // END IF
-    // if (lowers= true)
-    // randomly pick a lower cause letter
-    // add it to passwordInfo
-    // add join
-    // display the string in the box
-    
 
   generatePassword()
 
