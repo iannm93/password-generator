@@ -29,7 +29,8 @@ This program runs in browser. There is no installation needed.
 
 ## Code Examples
 Show examples of usage:
-` // confirm if user wants lower-case characters
+```
+// confirm if user wants lower-case characters
   var lowerChars = confirm ("do you want lower-case letters?")
   if (lowerChars){
     // if yes, add all lower-case characters to password array
@@ -37,7 +38,8 @@ Show examples of usage:
       passwordInfo.push(lowerCase[j]);
 
     }
-  }`
+  }
+  ```
 
 
 ## Status
